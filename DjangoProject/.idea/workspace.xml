@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff63cb08-f83b-4a1c-89cc-67c7498e3f60" name="默认的" comment="" />
+    <list default="true" id="2719eeba-0266-4ec4-a167-671ab868f1ca" name="默认的" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="1bACJrQQeKgMHnOrVHQLaloGon2" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1bCDRYjC3qiUiy2sH2i8apNROft" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -32,11 +42,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ff63cb08-f83b-4a1c-89cc-67c7498e3f60" name="默认的" comment="" />
-      <created>1588065441588</created>
+      <changelist id="2719eeba-0266-4ec4-a167-671ab868f1ca" name="默认的" comment="" />
+      <created>1588127173117</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1588065441588</updated>
+      <updated>1588127173117</updated>
     </task>
     <servers />
   </component>
