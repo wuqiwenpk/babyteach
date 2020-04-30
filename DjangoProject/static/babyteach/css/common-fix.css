@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+.bg-green {
+    background-color: #3095bf !important;
+}
+
+.navigation .nav-item.active {
+    background-color: #115c7b;
+}
+.navigation .nav-item .child a:hover {
+    color: #115c7b !important;
+}
+
+.navigation .nav-item:after {
+	background-color: #1f74a5;
+}
+
+.navigation .nav-item:before {
+	background-color: #3ba8cd;
+}
+
+content > img { padding:.5em 0 .5em 0; }
+.content p img { margin-left:0; padding-bottom:.5em; }

@@ -1,0 +1,220 @@
+@import "bootstrap-common.css";
+
+.navigation .nav-item .child a {
+    opacity: 0.9;
+}
+
+.navigation .nav-item .child a:hover {
+    color: #c40701 !important;
+    background-color: rgba(255, 255, 255, .8);
+    opacity: 1;
+}
+
+.navigation .nav-item.active {
+    background-color: #c40701;
+}
+
+.navigation .nav-item a:hover {
+    /*background-color: #c40701;*/
+}
+
+.navigation .nav-item1.active a {
+    background-color: #c40701;
+}
+
+.navigation .nav-item {
+    position: relative;
+    /*border-left: 1px solid #e6081d !important;
+    border-right: 1px solid #bd0d1e !important;*/
+    /*border-right: 1px solid rgba(0, 0, 0, .12);*/
+    text-align: center !important;
+}
+
+.navigation .nav-item:after {
+    content: " ";
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 1px;
+    height: 26px;
+    background-color: rgba(0, 0, 0, .12);
+    background-color: #bd0d1e;
+    text-align: center !important;
+}
+
+.navigation .nav-item:before {
+    content: " ";
+    position: absolute;
+    top: 8px;
+    right: 1px;
+    width: 1px;
+    height: 26px;
+    background-color: #e20e22;
+    text-align: center !important;
+}
+
+.navigation .nav-item:first-child:after {
+    display: none;
+}
+
+.navigation .nav-item:first-child:before {
+    display: none;
+}
+
+.navigation .nav-item:first-child {
+    /*border-left: none !important;
+    border-right: 1px solid #a50d1b !important;*/
+}
+
+.navigation .nav-item:last-child {
+    /*border-right: none !important;*/
+}
+
+.navigation .home1 a {
+    width: 50px;
+}
+
+.navigation .search-form {
+    width: 190px;
+}
+
+.navigation .search-form .input-group-text {
+    border: none;
+    padding: .375rem .75rem !important;
+}
+
+.navigation .search-form input {
+    border: none;
+    border-radius: 0 !important;
+    background-clip: unset;
+    font-size: 16px !important;
+}
+
+.navigation .search-form button {
+    color: rgba(0, 0, 0, .8);
+    border: none;
+    border-left: 1px solid #dedede;
+    background-color: whiteSmoke !important;
+}
+
+.navigation .search-form .form-control::-webkit-input-placeholder {
+    color: #999;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.navigation .search-form .form-control::-moz-placeholder {
+    color: #999;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.navigation .search-form .form-control:-ms-input-placeholder {
+    color: #999;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.navigation .search-form .form-control::-ms-input-placeholder {
+    color: #999;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.navigation .search-form .form-control::placeholder {
+    color: #999;
+    font-size: 14px !important;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.navigation .hot-special {
+    width: 80px;
+    text-indent: -300px;
+    overflow: hidden;
+    background: url(../img/hot-special.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.mobile-bg {
+    background: url(../img/lebg.jpg) no-repeat center top;
+    min-height: 600px;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.toutiao-bg {
+    padding-left: 100px;
+    position: relative;
+}
+
+.toutiao-bg:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: -18px;
+    width: 100px;
+    height: 80px;
+    background: url(../img/toutiao1.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.yinhao-bg {
+    padding-left: 60px;
+    padding-right: 50px;
+    position: relative;
+}
+
+.yinhao-bg:after {
+    content: " ";
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    background: #fff url(../img/yinhao.png) no-repeat left center;
+    background-size: 200%;
+}
+
+.yinhao-bg:before {
+    content: " ";
+    position: absolute;
+    right: 4px;
+    bottom: -20px;
+    width: 40px;
+    height: 40px;
+    background: #fff url(../img/yinhao.png) no-repeat right center;
+    background-size: 200%;
+}
+
+.verion-bg {
+    background: url(../img/verion-bg.png) no-repeat center bottom;
+    background-size: 100%;
+}
+
+.xuan-bg {
+    background: url(../img/xuan-bg.png) no-repeat center -80px;
+    background-size: 100%;
+}
+
+.content p {
+    padding-bottom: 1rem;
+}
+
+.content img {
+    max-width: 600px;
+    width: expression(this.width>600&&this.width>this.height?400:'auto');
+    max-height: 4500px;
+    height: expresion(this.height > 4500 ? 4500px: 'auto');
+    overflow: hidden;
+    border: 0px solid #CCCCCC;
+    padding: 0px;
+}
+
+.content p img {
+    margin-left: -2em;
+}
