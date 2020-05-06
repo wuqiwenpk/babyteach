@@ -1,5 +1,4 @@
 # python+django+mysql 从零搭建资讯类网站
-babyteach育儿资讯网站从零开发完整开发流程
 
 从零搭建资讯类网站01 (提供三个原始页面,介绍所需环境)：
 https://blog.csdn.net/u012575887/article/details/105817700
@@ -12,3 +11,6 @@ https://blog.csdn.net/u012575887/article/details/105833751
 
 从零搭建资讯类网站04 (结合第一篇文章提供的静态页面素材完成三个静态页面内容展示):
 https://blog.csdn.net/u012575887/article/details/105863333
+
+从零搭建资讯类网站05 (Mysql在windows下的安装，以及结合Mysql数据库完成首页顶部分类菜单的展示):
+https://blog.csdn.net/u012575887/article/details/105945968
