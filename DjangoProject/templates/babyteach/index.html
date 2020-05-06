@@ -80,22 +80,35 @@
             <ul class="navbar-nav text-center align-items-center align-middle">
                 <li class="nav-item lh-15 active"> <a href="/" target="_self" class="nav-link pt-2 pb-2 pl-3 pr-3 font-s18 text-white-85 font-weight-light rounded-">首页</a> </li>
 
-                <li class="nav-item lh-15 pl-2 pr-2 d-flex justify-content-between align-items-center align-middle ">
-                    <a href="/news-list.html" target="_self" class="nav-link- pt-2 pb-2 pl-1 pr-1 font-s18 text-white-85 font-weight-light rounded- hover">资讯</a>
+                <!--修改前-->
+                <!--<li class="nav-item lh-15 pl-2 pr-2 d-flex justify-content-between align-items-center align-middle ">
                     <div class="child d-flex p-0 m-0">
-                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-2.html">孕育百科</a>  <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-4.html">母婴宝典</a>  <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-8.html">专家在线</a>  <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-9.html">健康饮食</a>  <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-10.html">疾病护理</a>
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-2.html">孕育百科</a>
+                         <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-4.html">母婴宝典</a>
+                          <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-8.html">专家在线</a>
+                         <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-9.html">健康饮食</a>
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-10.html">疾病护理</a>
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-10.html">疾病护理</a>
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-10.html">疾病护理</a>
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-10.html">疾病护理</a>
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/news-list-cid-10.html">疾病护理</a>
+                    </div>
+                </li>-->
+
+                <!--修改后-->
+                <li class="nav-item lh-15 pl-2 pr-2 d-flex justify-content-between align-items-center align-middle ">
+                    <div class="child d-flex p-0 m-0">
+                        {% for i in tagslist %}
+                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="#">{{i.name}}</a>
+                        {% endfor %}
                     </div>
                 </li>
 
-                <li class="nav-item lh-15 pl-2 pr-2 d-flex justify-content-between align-items-center align-middle ">
-                    <a href="/zhidao-list.html" target="_self" class="nav-link- pt-2 pb-2 pl-1 pr-1 font-s18 text-white-85 font-weight-light rounded- hover">知识</a>
-                    <div class="child d-flex p-0 m-0">
-                        <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/zhidao-list-cid-2.html">品牌资讯</a>  <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/zhidao-list-cid-3.html">社会热点</a>  <a class="pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 " href="/zhidao-list-cid-4.html">母婴用品</a>
-                    </div>
-                </li>
+
+
 
             </ul>
-            <a href="/special" class="hot-special">专题策划</a>
+
         </div>
     </nav>
 
@@ -292,14 +305,14 @@
 
                     <ul class="list-unstyled">
                         <li class="media justify-content-center align-items-center align-middle border-bottom pb-4">
-                            <a href="/newsview69.html" target="_blank"><img alt="想做父母，怎样能更快速的怀孕" src="/static/babyteach/img/nophoto.gif"  class="lazyload align-self-center rounded mr-3" width="160" height="110"></a>
+                            <a href="/newsview69.html" target="_blank"><img alt="想做父母，怎样能更快速的怀孕" src="/static/babyteach/img/nophoto.gif" class="lazyload align-self-center rounded mr-3" width="160" height="110"></a>
                             <div class="media-body">
                                 <h5 class="font-s16 lh-15 text-left pt-0 pb-0 mt-0 mb-1"><a href="/newsview69.html" style="color:;font-weight:;" class="text-red" target="_blank">想做父母，怎样能更快速的怀孕</a></h5>
                                 <p class="font-weight-light font-s14 lh-15 text-default mb-0">每一对夫妻都想拥有一个自己的孩子，那么，怎样会更快速的怀孕呢?在这里就给想做爸爸妈...</p>
                             </div>
                         </li>
                         <li class="media justify-content-center align-items-center align-middle pt-4">
-                            <a href="/newsview68.html" target="_blank"><img alt="孕妇产后6个月是“减重黄金期”" src="/static/babyteach/img/nophoto.gif"  class="lazyload align-self-center rounded mr-3" width="160" height="110"></a>
+                            <a href="/newsview68.html" target="_blank"><img alt="孕妇产后6个月是“减重黄金期”" src="/static/babyteach/img/nophoto.gif" class="lazyload align-self-center rounded mr-3" width="160" height="110"></a>
                             <div class="media-body">
                                 <h5 class="font-s16 lh-15 text-left pt-0 pb-0 mt-0 mb-1"><a href="/newsview68.html" style="color:;font-weight:;" class="text-red" target="_blank">孕妇产后6个月是“减重黄金期”</a></h5>
                                 <p class="font-weight-light font-s14 lh-15 text-default mb-0">新手妈妈在手忙脚乱照料宝宝的同时，大多也会惦记着应该什么时候开始减肥，由于怀孕期...</p>

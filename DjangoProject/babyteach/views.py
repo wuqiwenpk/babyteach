@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from .models import Tags
 #首页视图
 def index(request):
-    return render(request, 'babyteach/index.html')
+    tagslist = Tags.objects.all()
+    return render(request, 'babyteach/index.html',{'tagslist':tagslist})
 
 #详情页视图
 def detail(request):
