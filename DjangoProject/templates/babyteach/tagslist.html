@@ -1,0 +1,86 @@
+
+
+{% extends 'babyteach/base.html' %}
+{%  block main %}
+
+
+  <div class="pt-3 pb-3 text-gray font-weight-light font-s12">
+
+        </div>  <div class="row p-0 m-0 mb-4">
+            <div class="col-8 p-0">
+             <h2 class="font-s22 font-weight-light text-default pt-0 pb-3 mb-0">当前分类 - {{tagname}}</h2>
+
+                <div class="list-unstyled mr-3">
+
+                    {% for i in list %}
+                     <div class="media justify-content-center align-items-center align-middle border-bottom pt-4 pb-4">
+                         <a href="/detail/{{i.id}}" target="_blank"><img class="lazyload align-self-center mr-4" src="{{i.pic}}" alt="{{i.title}}" width="140"></a>
+                        <div class="media-body">
+                            <h5 class="font-s18 font-weight-normal mb-2 lh-2"><a href="/detail/{{i.id}}" style="color:#252525;font-weight:;" target="_blank">{{i.title}}</a></h5>
+
+                            <p class="font-weight-light font-s14 text-gray mb-0">作者：{{i.author}} &nbsp; &nbsp;{{i.addtime | date:"Y-m-d H:i:s"}}</p>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+                <div class="clearfix"></div>
+                <ul class="pagination justify-content-center mt-5 mb-5" id="pagenav">
+                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/tagslist?p=1&tid={{tid}}">首页</a></li>
+                    {% if list.has_previous %}
+                     <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/tagslist?p={{list.previous_page_number}}&tid={{tid}}">上一页</a></li>
+                     <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/tagslist?p={{list.previous_page_number}}&tid={{tid}}">{{list.previous_page_number}}</a></li>
+                    {% endif %}
+                    <li class="page-item active current"><a class="page-link font-weight-light" href="javascript:;">{{list.number}}</a></li>
+
+                    {% if list.has_next %}
+                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/tagslist?p={{list.next_page_number}}&tid={{tid}}">{{list.next_page_number}}</a></li>
+                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/tagslist?p={{list.next_page_number}}&tid={{tid}}">下一页</a></li>
+                    {% endif %}
+                     <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/tagslist?p={{list.paginator.num_pages}}&tid={{tid}}">尾页</a></li>
+                </ul>
+            </div>
+            <div class="col-4 p-0 bg-light border-left- border-">
+
+
+
+
+
+
+                <div class="bg-gray p-2">
+                    <ul class="bg-white pt-0 pb-0 pl-3 pr-3 border" style="border-top: 2px solid #d6181d !important;">
+                        <div id="hotlist" class="bg-white text-red font-weight-light- font-s18 pt-3 pb-2">资讯热点排名</div>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="clearfix"></div>
+
+
+
+            </div>
+        </div>
+<script>
+    $(function(){
+    //加载热点资讯
+    $.ajax({
+    type:'post',
+    url:'/search/gethottagslist',
+    success:function(datas){
+    for(i=0;i<datas.hotlist.length;i++){
+     var num =i+1;
+     $("#hotlist").append("<li class='d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3'><a href='/detail/"+datas.hotlist[i].id+"' class='font-weight-light font-s14' target='_blank' style='color:;font-weight:;'><span class='badge badge-red text-white font-weight-light mr-2'>"+num+"</span>"+datas.hotlist[i].title+"</a><span class='font-weight-light font-s14 text-gray'></span></li>");
+    }
+
+    }
+    });
+
+    });
+</script>
+
+{%  endblock main %}
+
+
+
+

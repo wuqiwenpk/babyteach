@@ -173,7 +173,7 @@ gettoptagslist();
     url:'/base/gettoptagslist',
     success:function(datas){
     for(i=0;i<datas.tagslist.length;i++){
-     $("#tagslist").append("<a class='pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 ' href='#'>"+datas.tagslist[i].name+"</a>");
+     $("#tagslist").append("<a class='pt-0 pb-0 pl-1 pr-1 m-0 nav-link rounded text-white-85 font-weight-light font-s16 lh-12 ' href='/tagslist?p=1&tid="+datas.tagslist[i].id+"'>"+datas.tagslist[i].name+"</a>");
     }
 
     <!--console.log(datas.tagslist)-->

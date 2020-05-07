@@ -52,8 +52,21 @@ def search(request):
     #分页
     paginator = Paginator(list, pagesize)#使用Django的分页器 Paginator
     page = paginator.page(pageindex)
-
     return render(request, 'babyteach/search.html', {'list': page, 'keyword': keyword})
+
+#分类列表页
+def tagslist(request):
+
+    tid = request.GET.get('tid')#分类ID
+    list = Detail.objects.filter(tag=tid)
+    pageindex = request.GET.get('p')#接收url页码
+    pagesize = 5 #自定义页容量
+    tagname = Tags.objects.get(id=tid).name
+    print(tagname)
+    #分页
+    paginator = Paginator(list, pagesize)#使用Django的分页器 Paginator
+    page = paginator.page(pageindex)
+    return render(request, 'babyteach/tagslist.html', {'list': page,'tagname':tagname,'tid':tid})
 
 
 
