@@ -8,5 +8,6 @@ urlpatterns = [
 
     #.................................
     path('base/gettoptagslist', views.gettoptagslist),#获取顶部分类列表
+    path('search/gethottagslist', views.gethottagslist),#获取热点资讯
 
               ]

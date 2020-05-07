@@ -70,7 +70,7 @@
                         letter-spacing: 1px;
                         opacity: 1;
                     }
-                </style><div class="search-ajax-iframe"><form name="search-form" id="search-form" action="/" method="get" class="w-100">    <input type="hidden" name="modelId" id="modelId" value="" class="js-model-id">    <div class="input-group">        <div class="input-group-prepend">            <span class="input-group-text text-gray border-red border-right-0 bg-white pl-2 pr-2"><i class="fa fa-search"></i></span>        </div>        <input name="keyword" id="keyword" type="text" value="" class="form-control border-red border-left-0 h-auto pt-1 pb-1 pl-0 font-s14 font-weight-light js-keyword" aria-label="" placeholder="关键字">        <div class="input-group-append">            <button class="btn btn-red font-weight-light font-s14 pt-1 pb-1 pl-3 pr-3" type="button">搜 索</button>        </div>    </div></form>	</div>
+                </style><div class="search-ajax-iframe"><form name="search-form" id="search-form" action="/" method="get" class="w-100">    <input type="hidden" name="modelId" id="modelId" value="" class="js-model-id">    <div class="input-group">        <div class="input-group-prepend">            <span class="input-group-text text-gray border-red border-right-0 bg-white pl-2 pr-2"><i class="fa fa-search"></i></span>        </div>        <input  name="keyword" id="searchkeyword" type="text" value="" class="form-control border-red border-left-0 h-auto pt-1 pb-1 pl-0 font-s14 font-weight-light js-keyword" aria-label="" placeholder="关键字">        <div  class="input-group-append">            <button onclick="tosearch();" id="searchbtn" class="btn btn-red font-weight-light font-s14 pt-1 pb-1 pl-3 pr-3" type="button">搜 索</button>        </div>    </div></form>	</div>
             </div>
 
         </div>
@@ -146,9 +146,26 @@
 
 
 <script>
+
+//绑定回车事件
+document.onkeydown = function(e){
+   if(!e){
+    e = window.event;
+   }
+   if((e.keyCode || e.which) == 13){
+
+    window.location='/search?p=1&keyword='+$("#searchkeyword").val();
+   }
+  }
+
 $(function(){
 gettoptagslist();
 });
+
+    //检索按钮
+    function tosearch(){
+    window.location='/search?p=1&keyword='+$("#searchkeyword").val();
+    }
 
     function gettoptagslist(){
     $.ajax({

@@ -24,3 +24,6 @@ https://blog.csdn.net/u012575887/article/details/105951369
 
 从零搭建资讯类网站08 (完成搜索页的数据分页展示，使用Django分页器Paginator):
 https://blog.csdn.net/u012575887/article/details/105967517
+
+从零搭建资讯类网站09 (使用ajax异步加载详情页、搜索页中热门资讯列表数据）:
+https://blog.csdn.net/u012575887/article/details/105969009

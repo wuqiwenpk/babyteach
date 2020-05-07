@@ -43,52 +43,9 @@
 
                 <div class="bg-gray p-2">
                     <ul class="bg-white pt-0 pb-0 pl-3 pr-3 border" style="border-top: 2px solid #d6181d !important;">
-                        <div class="bg-white text-red font-weight-light- font-s18 pt-3 pb-2">资讯热点排名</div>
+                        <div id="hotlist" class="bg-white text-red font-weight-light- font-s18 pt-3 pb-2">资讯热点排名</div>
 
 
-
-
-
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview41.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="孕妇穿什么样的鞋对孕妇和宝宝都好呢?"><span class="badge badge-red text-white font-weight-light mr-2">1</span>孕妇穿什么样的鞋对孕妇和宝宝</a>
-                            <span class="font-weight-light font-s14 text-gray">394</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview44.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="家有宝宝，幼儿期吃花生可降低过敏风险"><span class="badge badge-red text-white font-weight-light mr-2">2</span>家有宝宝，幼儿期吃花生可降低</a>
-                            <span class="font-weight-light font-s14 text-gray">370</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview69.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="想做父母，怎样能更快速的怀孕"><span class="badge badge-red text-white font-weight-light mr-2">3</span>想做父母，怎样能更快速的怀孕</a>
-                            <span class="font-weight-light font-s14 text-gray">322</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview55.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="一岁内婴儿的智力发展有八次飞跃"><span class="badge badge-secondary text-white font-weight-light mr-2">4</span>一岁内婴儿的智力发展有八次飞</a>
-                            <span class="font-weight-light font-s14 text-gray">321</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview66.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="宝宝误喝了花露水，要怎么处理！"><span class="badge badge-secondary text-white font-weight-light mr-2">5</span>宝宝误喝了花露水，要怎么处理</a>
-                            <span class="font-weight-light font-s14 text-gray">305</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview67.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="如何预防小儿意外伤害"><span class="badge badge-secondary text-white font-weight-light mr-2">6</span>如何预防小儿意外伤害</a>
-                            <span class="font-weight-light font-s14 text-gray">302</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview68.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="孕妇产后6个月是“减重黄金期”"><span class="badge badge-secondary text-white font-weight-light mr-2">7</span>孕妇产后6个月是“减重黄金期</a>
-                            <span class="font-weight-light font-s14 text-gray">288</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview86.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="哺乳期妈妈们的“禁果”，少碰。"><span class="badge badge-secondary text-white font-weight-light mr-2">8</span>哺乳期妈妈们的“禁果”，少碰</a>
-                            <span class="font-weight-light font-s14 text-gray">286</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview75.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="准妈妈泡温泉应该注意哪些问题？"><span class="badge badge-secondary text-white font-weight-light mr-2">9</span>准妈妈泡温泉应该注意哪些问题</a>
-                            <span class="font-weight-light font-s14 text-gray">285</span>
-                        </li>
-                        <li class="d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3">
-                            <a href="/newsview87.html" class="font-weight-light font-s14" target="_blank" style="color:;font-weight:;" title="宝宝多大才可以添加辅食，怎么添加有学问。"><span class="badge badge-secondary text-white font-weight-light mr-2">10</span>宝宝多大才可以添加辅食，怎么</a>
-                            <span class="font-weight-light font-s14 text-gray">282</span>
-                        </li>
                     </ul>
                 </div>
 
@@ -99,6 +56,23 @@
 
             </div>
         </div>
+<script>
+    $(function(){
+    //加载热点资讯
+    $.ajax({
+    type:'post',
+    url:'/search/gethottagslist',
+    success:function(datas){
+    for(i=0;i<datas.hotlist.length;i++){
+     var num =i+1;
+     $("#hotlist").append("<li class='d-flex justify-content-between align-items-center align-middle border-top pt-3 pb-3'><a href='/detail/"+datas.hotlist[i].id+"' class='font-weight-light font-s14' target='_blank' style='color:;font-weight:;'><span class='badge badge-red text-white font-weight-light mr-2'>"+num+"</span>"+datas.hotlist[i].title+"</a><span class='font-weight-light font-s14 text-gray'></span></li>");
+    }
+
+    }
+    });
+
+    });
+</script>
 
 {%  endblock main %}
 
