@@ -3,50 +3,35 @@
 {% extends 'babyteach/base.html' %}
 {%  block main %}
   <div class="pt-3 pb-3 text-gray font-weight-light font-s12">
-            <i class="fa fa-home" aria-hidden="true"></i>
-            <a href="" title="首页" class="text-gray">首页</a> <i class="fas fa-angle-right ml-2 mr-2"></i> <a title="资讯" class="text-gray" href="/news-list.html">资讯</a>
         </div>  <div class="row p-0 m-0 mb-4">
             <div class="col-8 p-0">
-                <h2 class="font-s22 font-weight-light text-default pt-0 pb-3 mb-0">资讯</h2>
+                <p class="">关于 <font color="red">{{keyword}}</font> 的搜索，共 {{list.paginator.count}} 条检索结果：</p>
                 <div class="list-unstyled mr-3">
 
-                    <div class="media justify-content-center align-items-center align-middle border-bottom pt-4 pb-4">
+                    {% for i in list %}
+                     <div class="media justify-content-center align-items-center align-middle border-bottom pt-4 pb-4">
                         <div class="media-body">
-                            <h5 class="font-s18 font-weight-normal mb-2 lh-2"><a href="/newsview180.html" style="color:#252525;font-weight:;" target="_blank">做明智妈妈 你要学会的几点小道理</a></h5>
-                            <!--<p class="font-weight-light font-s14 text-gray mb-2 collapse"><i class="fas fa-bars mr-2" aria-hidden="true"></i><a href="" target="_blank"></a></p>-->
-                            <p class="font-weight-light font-s14 text-gray mb-0"><i class="far fa-clock mr-2" aria-hidden="true"></i>04/28/2020 12:20</p>
-                        </div>
-                    </div>
-                    <div class="media justify-content-center align-items-center align-middle border-bottom pt-4 pb-4">
-                        <div class="media-body">
-                            <h5 class="font-s18 font-weight-normal mb-2 lh-2"><a href="/newsview180.html" style="color:#252525;font-weight:;" target="_blank">做明智妈妈 你要学会的几点小道理</a></h5>
-                            <!--<p class="font-weight-light font-s14 text-gray mb-2 collapse"><i class="fas fa-bars mr-2" aria-hidden="true"></i><a href="" target="_blank"></a></p>-->
-                            <p class="font-weight-light font-s14 text-gray mb-0"><i class="far fa-clock mr-2" aria-hidden="true"></i>04/28/2020 12:20</p>
-                        </div>
-                    </div>
-                    <div class="media justify-content-center align-items-center align-middle border-bottom pt-4 pb-4">
-                        <div class="media-body">
-                            <h5 class="font-s18 font-weight-normal mb-2 lh-2"><a href="/newsview180.html" style="color:#252525;font-weight:;" target="_blank">做明智妈妈 你要学会的几点小道理</a></h5>
-                            <!--<p class="font-weight-light font-s14 text-gray mb-2 collapse"><i class="fas fa-bars mr-2" aria-hidden="true"></i><a href="" target="_blank"></a></p>-->
-                            <p class="font-weight-light font-s14 text-gray mb-0"><i class="far fa-clock mr-2" aria-hidden="true"></i>04/28/2020 12:20</p>
-                        </div>
-                    </div>
+                            <h5 class="font-s18 font-weight-normal mb-2 lh-2"><a href="/detail/{{i.id}}" style="color:#252525;font-weight:;" target="_blank">{{i.title}}</a></h5>
 
+                            <p class="font-weight-light font-s14 text-gray mb-0">作者：{{i.author}} &nbsp; &nbsp;{{i.addtime | date:"Y-m-d H:i:s"}}</p>
+                        </div>
+                    </div>
+                    {%endfor%}
                 </div>
-
-
                 <div class="clearfix"></div>
-
-
                 <ul class="pagination justify-content-center mt-5 mb-5" id="pagenav">
+                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/search?p=1&keyword={{keyword}}">首页</a></li>
+                    {% if list.has_previous %}
+                     <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/search?p={{list.previous_page_number}}&keyword={{keyword}}">上一页</a></li>
+                     <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/search?p={{list.previous_page_number}}&keyword={{keyword}}">{{list.previous_page_number}}</a></li>
+                    {% endif %}
+                    <li class="page-item active current"><a class="page-link font-weight-light" href="javascript:;">{{list.number}}</a></li>
 
-                    <li class="page-item active current"><a class="page-link font-weight-light" href="/news-list-page-1.html">1</a></li>
-                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/news-list-page-2.html">2</a></li>
-                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/news-list-page-3.html">3</a></li>
-
-
-
-
+                    {% if list.has_next %}
+                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/search?p={{list.next_page_number}}&keyword={{keyword}}">{{list.next_page_number}}</a></li>
+                    <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/search?p={{list.next_page_number}}&keyword={{keyword}}">下一页</a></li>
+                    {% endif %}
+                     <li class="page-item"><a class="page-link font-weight-light page_num page_num_1" href="/search?p={{list.paginator.num_pages}}&keyword={{keyword}}">尾页</a></li>
                 </ul>
             </div>
             <div class="col-4 p-0 bg-light border-left- border-">

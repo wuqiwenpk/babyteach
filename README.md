@@ -21,3 +21,6 @@ https://blog.csdn.net/u012575887/article/details/105949202
 
 从零搭建资讯类网站07 (使用页面布局，使部分页面具有可复用性):
 https://blog.csdn.net/u012575887/article/details/105951369
+
+从零搭建资讯类网站08 (完成搜索页的数据分页展示，使用Django分页器Paginator):
+https://blog.csdn.net/u012575887/article/details/105967517
