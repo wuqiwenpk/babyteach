@@ -30,3 +30,6 @@ https://blog.csdn.net/u012575887/article/details/105969009
 
 从零搭建资讯类网站10 (通过爬虫爬取同类资讯网站新闻详情页，并保持内容到数据库中）:
 https://blog.csdn.net/u012575887/article/details/105992152
+
+从零搭建资讯类网站11 (通过爬虫爬取同类资讯网站新闻列表页）:
+https://blog.csdn.net/u012575887/article/details/105995428

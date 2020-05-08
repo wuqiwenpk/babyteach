@@ -23,7 +23,13 @@ def getdetailbyspider(url):
         words = etree.tostring(orgwords[0], encoding="utf-8", pretty_print=True).decode("utf-8")
         pic = "/static/babyteach/img/nophoto.gif" #默认封面图
         if len(item.xpath('div[@class="intro"]//img/@src'))!=0:
-            pic ='http://www.yuerzaixian.com/'+ item.xpath('div[@class="intro"]//img/@src')[0]#正文存在图片时保持第一张图片作为封面图
+            orgpic = item.xpath('div[@class="intro"]//img/@src')[0]
+            if "http" not in orgpic:
+                pic = 'http://www.yuerzaixian.com/' + item.xpath('div[@class="intro"]//img/@src')[0]  # 正文存在图片时保持第一张图片作为封面图
+            else:
+                pic = item.xpath('div[@class="intro"]//img/@src')[0]
+
+
     words = words.replace('src="/UploadFiles','src="http://www.yuerzaixian.com/UploadFiles')#处理正文中未添加域名的图片url
     pattern = re.compile(r'<[^>]+>', re.S)
     summary = pattern.sub('', words).strip()[0:60]#截取正文前面文字作为简介
@@ -46,5 +52,46 @@ def getdetailbyspider(url):
     detail.tag = Tags.objects.get(id=5) #育儿资讯
     detail.save()
 
-#运行函数
-getdetailbyspider("http://www.yuerzaixian.com/html/news/hangye/25320.html")
+
+
+
+#爬取列表页数据
+def getnewslistbyspider(url):
+    response = requests.get(url).text
+    #print(response)
+    x = etree.HTML(response)
+    x = x.xpath('//div[(@class="news_list leftbox fl whitebg")]/ul/li')
+    for item in x:
+        url = item.xpath('a/@href')[0] #获取当前列表页模块中的所有文章链接
+        url = "http://www.yuerzaixian.com"+url #拼接成完整url
+        print(url)
+        #调用方法爬详情页
+        getdetailbyspider(url)
+
+
+
+
+
+# #获取列表页数据
+# getnewslistbyspider("http://www.yuerzaixian.com/a/1171.aspx?p-1")
+
+#爬取前10个列表页
+for i in range(1, 11):
+    url = "http://www.yuerzaixian.com/a/1171.aspx?p-"+str(i)
+    print(url)
+    getnewslistbyspider(url)
+
+
+
+
+
+
+
+
+# getnewslistbyspider("http://www.yuerzaixian.com/a/1171.aspx?p-1")
+
+
+
+
+#运行函数获取详情页数据
+# getdetailbyspider("http://www.yuerzaixian.com/html/news/hangye/25320.html")
