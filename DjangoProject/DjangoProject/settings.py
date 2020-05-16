@@ -90,11 +90,22 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'babyteach',
         'USER': 'root',
-        'PASSWORD': 'xiaoming123',
-        'HOST': '123.207.24.112',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
+# #远程测试库
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'babyteach',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': '123.207.24.112',
+#         'PORT': '3306'
+#     }
+# }
 
 
 
