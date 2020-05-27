@@ -2,8 +2,15 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Tags, Detail
+from .task import add_user,dosomething,mul,writetxt
+from datetime import datetime
 #首页视图
 def index(request):
+    print('进入首页')
+    #celery测试 修改xxx.txt文件
+    # writetxt.delay('abc 有人吗 没把2222222')
+
+
     tagslist = Tags.objects.all()
     top20list = Detail.objects.order_by('-id').values('id', 'title', 'summary', 'tag__name')[0:15]#左边资讯
     hot2list = Detail.objects.order_by('-clicks').values('id', 'title', 'summary', 'pic')[0:2]#2条热点资讯

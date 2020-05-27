@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2719eeba-0266-4ec4-a167-671ab868f1ca" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babyteach/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/babyteach/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babyteach/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/babyteach/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/babyteach/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +36,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="newsspider" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -76,10 +88,17 @@
       <workItem from="1589617829028" duration="1410000" />
       <workItem from="1590302056269" duration="2120000" />
       <workItem from="1590544630729" duration="78000" />
+      <workItem from="1590545201788" duration="5839000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="607" y="149" key="SettingsEditor" timestamp="1590545428594">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="607" y="149" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590545428594" />
   </component>
 </project>

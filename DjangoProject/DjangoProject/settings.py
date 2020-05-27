@@ -25,7 +25,7 @@ SECRET_KEY = 'i!2e*)68*2^58e_o+nd@p3=(p+4k_n3tk#w+4qr5@rxw%(%fiv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -95,7 +95,8 @@ DATABASES = {
         'PORT': '3306'
     }
 }
-# #远程测试库
+
+#远程测试库
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -106,6 +107,22 @@ DATABASES = {
 #         'PORT': '3306'
 #     }
 # }
+
+
+
+#配置celery
+BROKER_URL = 'redis://:123456@127.0.0.1:6379/3'
+CELERY_RESULT_BACKEND = 'redis://:123456@127.0.0.1:6379/4'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Shanghai'
+CELERY_ENABLE_UTC=True
+# BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 43200}  # 设置超时时间，一定要设置
+# BACKEND='redis://:123456@127.0.0.1:6379/3'
+# BROKER='redis://:123456@127.0.0.1:6379/4'
+# CELERY_TIMEZONE='Asia/Shanghai'
+# CELERY_ENABLE_UTC=True
 
 
 
